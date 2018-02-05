@@ -6,7 +6,9 @@ I was trying to make some nice rendered brain images for a paper and started usi
 This is a little tool to make all that easier. It uses VTK (VTK-8.1.0 in particular). You have to download and install VTK first (via cmake and make), then use the vtkpython executable that is created in VTK_DIR/build/bin.
 
 
-There is only one Python file you need: vtkSnap.py is the help for it:
+There is only one Python file you need: vtkSnap.py 
+
+Here is the help for it:
 
 ******************************************************************
 usage: vtkSnap.py [-h] [--Xrot X_ROT] [--Yrot Y_ROT] [--Zrot Z_ROT]
