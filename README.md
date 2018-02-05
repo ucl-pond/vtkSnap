@@ -3,7 +3,7 @@ A simple, command-line image render and snaphot tool for NIFTI files
 
 I was trying to make some nice rendered brain images for a paper and started using ITK Snap (https://github.com/pyushkevich/itksnap), which is a great tool if you have just a few images you want to render. Unfortunately, with many images it becomes a pain to load the main image, the segmentation image, rotate to the desired angle and then create the snapshot. 
 
-This is a little tool to doing all that easier, via the command line. It uses VTK (VTK-8.1.0 in particular). You have to download and install VTK first (via cmake and make), then use the vtkpython executable that is created in VTK_DIR/build/bin.
+This is a little tool to make all that easier. It uses VTK (VTK-8.1.0 in particular). You have to download and install VTK first (via cmake and make), then use the vtkpython executable that is created in VTK_DIR/build/bin.
 
 
 There is only one Python file you need: vtkSnap.py is the help for it:
