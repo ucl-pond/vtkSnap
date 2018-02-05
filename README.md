@@ -36,7 +36,9 @@ I've included an example nii file called example.nii along with a label file cal
 
 vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 example.nii labels_rgb_7levels.csv out_x90_y90_z185.png
 
-Here it is: <img src="out_x90_y90_z185.png" width="500" height="500" />
+Here it is: \
+\
+<img src="out_x90_y90_z185.png" width="500" height="500" />
 
 You can rotate the image about the x-axis (left/right), y-axis (up/down) and z-axis (in/out of screen) using the Xrot, Yrot and Zrot optional arguments.
 
@@ -44,4 +46,6 @@ For example, let's see the inside of the brain by rotating 180 degrees about the
 
 vtkpython vtkSnap.py --Xrot 90 --Yrot 270 --Zrot 180 example.nii labels_rgb_7levels.csv out_x90_y270_z180.png
 
-Here it is: <img src="out_x90_y270_z180.png" width="500" height="500" />
+Here it is: \
+\
+<img src="out_x90_y270_z180.png" width="500" height="500" />
