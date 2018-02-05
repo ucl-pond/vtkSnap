@@ -1,23 +1,22 @@
 # vtkSnap
 A simple, command-line image render and snapshot tool for NIFTI files
 
-I was trying to make some nice rendered brain images and started using ITK Snap (https://github.com/pyushkevich/itksnap), which is a great tool if you have just a few images you want to render. Unfortunately, with many images it becomes a pain to load the main image, the segmentation image, rotate to the desired angle and then create the snapshot. 
+I was trying to make some nice rendered brain images and started using [ITK Snap](https://github.com/pyushkevich/itksnap), which is a great tool if you have just a few images you want to render. Unfortunately, with many images it becomes a pain to load the main image, the segmentation image, rotate to the desired angle and then create the snapshot. 
 
-This is a little tool to make all that easier. It uses VTK (VTK-8.1.0 in particular). You have to download and install VTK first (via cmake and make), then use the vtkpython executable that is created in VTK_DIR/build/bin.
+This is a little tool to make all that easier. It uses VTK ([VTK-8.1.0](https://www.vtk.org/download/) in particular). You have to download and install VTK first (via cmake and make, [this](https://www.vtk.org/Wiki/VTK/Building/MacOSX) may help), then use the vtkpython executable that is created in VTK_DIR/build/bin.
 
 
-There is only one Python file you need: vtkSnap.py 
+There is only one Python file: vtkSnap.py 
 
 Here is the help for it:
 \
 ******************************************************************\
-usage: vtkSnap.py [-h] [--Xrot X_ROT] [--Yrot Y_ROT] [--Zrot Z_ROT]
-                  in_file label_file out_file
+usage: vtkSnap.py [-h] [--Xrot X_ROT] [--Yrot Y_ROT] [--Zrot Z_ROT] in_file label_file out_file  
 
 VTK Snap: A simple VTK based snapshot tool. Uses VTK python library (built
 using VTK 8.1.0).
 
-positional arguments:
+positional arguments:\
   in_file       NIFTI input filename\
   label_file    File with mapping from label to RGB. CSV file with header:\
                 label,red,green,blue\
@@ -29,8 +28,7 @@ optional arguments:\
   --Yrot Y_ROT  Y rotation (degrees)\
   --Zrot Z_ROT  Z rotation (degrees)\
 \
-Example call: vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 in.nii\
-labels.csv out.png\
+Example call: vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 in.nii labels.csv out.png\
 ******************************************************************\
 \
 \
