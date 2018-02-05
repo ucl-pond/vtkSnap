@@ -3,7 +3,7 @@ A simple, command-line image render and snapshot tool for NIFTI files
 
 I was trying to make some nice rendered brain images and started using [ITK Snap](https://github.com/pyushkevich/itksnap), which is a great tool if you have just a few images you want to render. Unfortunately, with many images it becomes a pain to load the main image, the segmentation image, rotate to the desired angle and then create the snapshot. 
 
-This is a little tool to make all that easier. It uses VTK ([VTK-8.1.0](https://www.vtk.org/download/) in particular). You have to download and install VTK first (via cmake and make, [this](https://www.vtk.org/Wiki/VTK/Building/MacOSX) may help), then use the vtkpython executable that is created in VTK_DIR/build/bin.
+This is a little tool to make all that easier. It uses VTK ([VTK-8.1.0](https://www.vtk.org/download/) in particular). You have to download and install VTK first (run 'cmake', 'make' and 'make install'), then use the vtkpython executable that is created in VTK_DIR/build/bin as the python executable.
 
 
 There is only one Python file: vtkSnap.py 
@@ -36,10 +36,13 @@ I've included an example nii file called example.nii along with a label file cal
 
 vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 example.nii labels_rgb_7levels.csv out_x90_y90_z185.png
 
+Here it is: ![outside brain](out_x90_y90_z185.png)
+
 You can rotate the image about the x-axis (left/right), y-axis (up/down) and z-axis (in/out of screen) using the Xrot, Yrot and Zrot optional arguments.
 
 For example, let's see the inside of the brain by rotating 180 degrees about the y-axis and 5 degrees about the z-axis:
 
 vtkpython vtkSnap.py --Xrot 90 --Yrot 270 --Zrot 180 example.nii labels_rgb_7levels.csv out_x90_y270_z180.png
 
+Here it is: ![inside brain](out_x90_y270_z180.png)
 
