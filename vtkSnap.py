@@ -89,10 +89,6 @@ for i in range(1, iMax + 1): #imageScalars: #
 	if i == 0:
 		continue
 
- 	print("Processing label " + str(i));
-	assert i in rgbDict.keys(), "Label {} not in labels file".format(i) 
-
-
 	#imageData_i = imageData;
 	imageData_i = vtk.vtkImageData();
 	imageData_i.DeepCopy(imageData);
@@ -112,6 +108,10 @@ for i in range(1, iMax + 1): #imageScalars: #
 	if iMin == 0 and iMax == 0:
 		print("Label {} not found, skipping.".format(i))
 		continue
+ 	else:
+		assert i in rgbDict.keys(), "Label {} not in labels file".format(i) 
+
+ 	print("Processing label " + str(i));
 	
 	# Run marching cubes on the input image
 	fltMarching_i 		= vtk.vtkMarchingCubes();   #***** Discrete version instead?
