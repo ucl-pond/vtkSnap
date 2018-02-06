@@ -84,9 +84,14 @@ assert iMin == 0
 print 'Image has label range: {} to {}.'.format(iMin, iMax)
 
 # ************* Run marching cubes on each unique label, add actor
-for i in range(1, iMax + 1):
+for i in range(1, iMax + 1): #imageScalars: #
+
+	if i == 0:
+		continue
 
  	print("Processing label " + str(i));
+	assert i in rgbDict.keys(), "Label {} not in labels file".format(i) 
+
 
 	#imageData_i = imageData;
 	imageData_i = vtk.vtkImageData();
@@ -101,6 +106,12 @@ for i in range(1, iMax + 1):
 	thresh.SetInValue(i)
 	thresh.SetOutValue(0)
 	thresh.Update()
+	
+	#******** Check current label exists in image
+	iMin, iMax 	= thresh.GetOutput().GetPointData().GetScalars().GetValueRange()
+	if iMin == 0 and iMax == 0:
+		print("Label {} not found, skipping.".format(i))
+		continue
 	
 	# Run marching cubes on the input image
 	fltMarching_i 		= vtk.vtkMarchingCubes();   #***** Discrete version instead?
