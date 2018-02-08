@@ -27,7 +27,7 @@ optional arguments:
   --Yrot Y_ROT  Y rotation (degrees)
   --Zrot Z_ROT  Z rotation (degrees)
 
-Example call: vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 in.nii labels.csv out.png\
+Example call: vtkpython vtkSnap.py --Xrot 90 --Yrot 90 --Zrot 185 in.nii labels.csv out.png
 ```
 
 I've included an example nii file called example.nii along with a label file called labels_rgb_7levels.csv, so an example call would be:
